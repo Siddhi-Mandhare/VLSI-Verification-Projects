@@ -1,0 +1,34 @@
+# AXI Protocol — UVC Development & Verification
+
+A UVM-based Universal Verification Component (UVC) built from scratch to verify
+AXI protocol behavior independently of the DUT (Design Under Test).
+
+## 🛠️ Tech Stack
+- Language: SystemVerilog
+- Methodology: UVM (Universal Verification Methodology)
+- Assertions: SVA (SystemVerilog Assertions)
+
+## ✨ Features
+- Modular UVM environment (Agent, Driver, Monitor, Scoreboard, Sequencer)
+- Verified five-channel AXI handshaking (AW, W, B, AR, R)
+- Write data interleaving across multiple burst types (FIXED, INCR, WRAP)
+- SVA integration for real-time bus compliance monitoring
+- Detects timing violations and data integrity issues across all channels
+
+## 📂 Project Structure
+├── tb/               # Testbench top
+├── env/              # UVM Environment
+├── agent/            # Driver, Monitor, Sequencer
+├── sequences/        # Test sequences
+├── assertions/       # SVA properties
+└── tests/            # UVM test classes
+
+## ⚙️ How to Run
+```bash
+# Example with QuestaSim / ModelSim
+vlog -sv tb/top.sv
+vsim -c top -do "run -all"
+```
+
+## 📄 License
+MIT
